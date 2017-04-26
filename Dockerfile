@@ -15,8 +15,9 @@ RUN echo 'gem: --no-rdoc --no-ri' >> "$HOME/.gemrc"
 RUN CFLAGS="-O2 -fno-tree-dce -fno-optimize-sibling-calls" \
     CONFIGURE_OPTS=--no-tcmalloc \
     ruby-build --verbose ree-1.8.7-2012.02 /usr/local/lib/ruby
-RUN ln -s /usr/local/lib/ruby/bin/* /usr/local/bin
 RUN gem install bundler bundle
+RUN ln -s /usr/local/lib/ruby/bin/* /usr/local/bin
+ENV PATH="/usr/local/lib/ruby/bin:${PATH}"
 
 
 
