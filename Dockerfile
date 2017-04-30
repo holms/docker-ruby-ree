@@ -11,7 +11,7 @@ RUN apk update \
         && CFLAGS="-O2 -fno-tree-dce -fno-optimize-sibling-calls" \
         && CONFIGURE_OPTS=--no-tcmalloc ruby-build --verbose ree-1.8.7-2012.02 /usr/local/lib/ruby \
         && gem install bundler \
-        && apk del ruby zlib-dev openssl-dev readline-dev \
+        && apk del alpine-sdk ruby zlib-dev openssl-dev readline-dev \
         && rm -rf /ruby-build \
         && rm -rf /var/cache/apk
 
