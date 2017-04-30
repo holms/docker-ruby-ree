@@ -13,7 +13,7 @@ RUN apk update \
         && gem install bundler \
         && apk del alpine-sdk ruby zlib-dev openssl-dev readline-dev \
         && rm -rf /ruby-build \
-        && rm -rf /var/cache/apk
+        && rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/local/lib/ruby/bin/* /usr/local/bin
 ENV PATH="/usr/local/lib/ruby/bin:${PATH}"
